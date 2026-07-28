@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Background peta atlas - warna perkamen/kertas kuno halus */
+    --bg-page: #FAF6EE;
+    --border-color: #D6CBB5;
+    --border-dark: #A89B85;
+    --text-primary: #3E382F;
+    --text-secondary: #6B6150;
+    --text-muted: #9E917D;
+
+    /* Palette Warna Peta Atlas (Pastel/Muted Bumi & Samudra) */
+    --atlas-ocean: #6A9AB0;
+    --atlas-ocean-light: #E1ECF4;
+    --atlas-land: #82A979;
+    --atlas-land-light: #EBF2EB;
+    --atlas-sand: #D3A261;
+    --atlas-sand-light: #F9F3E8;
+    --atlas-danger: #C57D7D;
+    --atlas-danger-light: #F7EBEB;
+
+    /* Statuses */
+    --status-rendah: #82A979;
+    --status-sedang: #D3A261;
+    --status-tinggi: #C57D7D;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-page);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--atlas-ocean);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ========== Top Navigation Layout (Atlas Horizontal Command Center) ========== */
+.neo-wrapper {
+    display: block;
+    min-height: 100vh;
+}
+
+.atlas-header {
+    background-color: #FFFDF9;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(168, 155, 133, 0.05);
+}
+
+.atlas-brand h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+.atlas-navbar {
+    background: linear-gradient(90deg, #85A9C0 0%, #E6DEC9 50%, #92B48F 100%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 6px 16px;
+    box-shadow: 0 2px 5px rgba(62, 56, 47, 0.08);
+}
+
+.atlas-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    color: #3E382F !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    background: transparent;
+}
+
+.atlas-nav-link:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #1E1A16 !important;
+    text-decoration: none;
+}
+
+.atlas-nav-link.active, .atlas-nav-link.dropdown-toggle.active {
+    background: rgba(255, 255, 255, 0.65);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #1E1A16 !important;
+}
+
+/* Dropdown Menu Style */
+.dropdown-menu {
+    background-color: #FFFDF9;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 4px 12px rgba(168, 155, 133, 0.15) !important;
+    border-radius: 8px !important;
+    padding: 6px 0 !important;
+}
+
+.dropdown-item {
+    color: var(--text-primary) !important;
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 8px 16px !important;
+    transition: all 0.15s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--atlas-ocean-light) !important;
+    color: var(--text-primary) !important;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: var(--atlas-ocean) !important;
+    color: #FFF !important;
+}
+
+/* ========== Main Content Area ========== */
+.neo-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 40px;
+    box-sizing: border-box;
+    margin-left: 0;
+    max-width: 100%;
+}
+
+.neo-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+}
+
+.neo-topbar-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ========== Box / Card (Kertas Perkamen Terang) ========== */
+.neo-box {
+    background-color: #FFFDF9;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(168, 155, 133, 0.15);
+    transition: all 0.2s ease;
+}
+
+.neo-box-hover:hover {
+    box-shadow: 0 4px 12px rgba(168, 155, 133, 0.25);
+    border-color: var(--border-dark);
+}
+
+/* ========== Buttons (Gaya Peta Klasik) ========== */
+.btn-neo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-primary);
+    background-color: #FFFDF9;
+    transition: all 0.15s ease;
+    box-shadow: 0 1px 3px rgba(168, 155, 133, 0.2);
+}
+
+.btn-neo:hover {
+    background-color: #FAF6EE;
+    border-color: var(--border-dark);
+}
+
+.btn-neo:active {
+    background-color: #F3ECE0;
+}
+
+.btn-neo-lime {
+    background-color: var(--atlas-land);
+    color: #FFFFFF;
+    border-color: #6C9463;
+}
+.btn-neo-lime:hover { background-color: #6C9463; }
+
+.btn-neo-pink {
+    background-color: var(--atlas-danger);
+    color: #FFFFFF;
+    border-color: #A96161;
+}
+.btn-neo-pink:hover { background-color: #A96161; }
+
+.btn-neo-blue {
+    background-color: var(--atlas-ocean);
+    color: #FFFFFF;
+    border-color: #537F94;
+}
+.btn-neo-blue:hover { background-color: #537F94; }
+
+.btn-neo-yellow {
+    background-color: var(--atlas-sand);
+    color: #FFFFFF;
+    border-color: #B58444;
+}
+.btn-neo-yellow:hover { background-color: #B58444; }
+
+.btn-neo-purple {
+    background-color: var(--atlas-ocean);
+    color: #FFFFFF;
+    border-color: #537F94;
+}
+.btn-neo-purple:hover { background-color: #537F94; }
+
+/* ========== Tables ========== */
+.neo-table-wrapper {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: #FFFDF9;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(168, 155, 133, 0.1);
+}
+
+.neo-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.neo-table th {
+    background-color: #F5EFE0;
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.neo-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #FAF6EE;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.neo-table tr:last-child td {
+    border-bottom: none;
+}
+
+.neo-table tr:hover td {
+    background-color: #F8F3E5;
+}
+
+/* ========== Badges ========== */
+.neo-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-weight: 600;
+    font-size: 0.7rem;
+    border: none;
+    border-radius: 20px;
+    color: #FFFFFF;
+}
+
+.neo-badge-lime { background-color: var(--atlas-land); }
+.neo-badge-pink { background-color: var(--atlas-danger); }
+.neo-badge-blue { background-color: var(--atlas-ocean); }
+.neo-badge-yellow { background-color: var(--atlas-sand); }
+
+/* ========== Forms ========== */
+.neo-input, .neo-select, .neo-textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #FFFDF9;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.neo-input:focus, .neo-select:focus, .neo-textarea:focus {
+    border-color: var(--atlas-ocean);
+    box-shadow: 0 0 0 3px rgba(106, 154, 176, 0.15);
+}
+
+/* ========== Card Headers (Warna Geografis Atlas) ========== */
+.card-header-yellow {
+    background-color: var(--atlas-sand-light);
+    border-bottom: 1px solid var(--border-color);
+    margin: -20px -20px 20px -20px;
+    padding: 14px 20px;
+}
+
+.card-header-blue {
+    background-color: var(--atlas-ocean-light);
+    border-bottom: 1px solid var(--border-color);
+    margin: -20px -20px 20px -20px;
+    padding: 14px 20px;
+}
+
+.card-header-pink {
+    background-color: var(--atlas-danger-light);
+    border-bottom: 1px solid var(--border-color);
+    margin: -20px -20px 20px -20px;
+    padding: 14px 20px;
+}
+
+.card-header-lime {
+    background-color: var(--atlas-land-light);
+    border-bottom: 1px solid var(--border-color);
+    margin: -20px -20px 20px -20px;
+    padding: 14px 20px;
+}
+
+.card-header-purple {
+    background-color: var(--atlas-ocean-light);
+    border-bottom: 1px solid var(--border-color);
+    margin: -20px -20px 20px -20px;
+    padding: 14px 20px;
+}
+
+.card-header-title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+/* ========== Grid & Layout Utilities ========== */
+.neo-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.neo-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.neo-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* ========== Loading Overlays ========== */
+.neo-loader-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(250, 246, 238, 0.85);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.neo-loader-box {
+    background: #FFFDF9;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(168, 155, 133, 0.2);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* ========== Alerts (Topografi Muted) ========== */
+.neo-alert {
+    background-color: #FFFDF9;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.neo-alert-success {
+    background-color: var(--atlas-land-light);
+    border-color: #B2CBAA;
+    color: #3B5A33;
+}
+.neo-alert-danger {
+    background-color: var(--atlas-danger-light);
+    border-color: #E2B4B4;
+    color: #7C3A3A;
+}
+.neo-alert-warning {
+    background-color: var(--atlas-sand-light);
+    border-color: #E6CE9F;
+    color: #795726;
+}
+.neo-alert-info {
+    background-color: var(--atlas-ocean-light);
+    border-color: #A9C2D0;
+    color: #2F4D5F;
+}
+
+/* ========== Weather Markers ========== */
+.weather-marker-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #FFFDF9;
+    box-shadow: 0 1px 4px rgba(62, 56, 47, 0.3);
+}
+
+/* ========== Auth Pages ========== */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAF6EE;
+}
+
+.auth-card {
+    background: #FFFDF9;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 16px rgba(168, 155, 133, 0.15);
+}
+
+.auth-card h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--atlas-ocean);
+}
+
+.auth-card p {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
